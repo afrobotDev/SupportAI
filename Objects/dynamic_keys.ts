@@ -1,7 +1,6 @@
 export type MailPreferences = {
-  [key: string] : boolean;
+  [key: string]: boolean;
 };
-
 
 export function setPreference(
   preferences: MailPreferences,
@@ -12,4 +11,3 @@ export function setPreference(
   preferences[key] = value;
   return exists;
 }
-
