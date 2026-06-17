@@ -12,8 +12,6 @@ export type ChannelTag = {
 
 export type ReviewMethod = "manual_review" | "auto_process";
 
-// don't touch above this line
-
 export type TicketMetadata = {
   sentiment: SentimentTag;
   channel: ChannelTag;
