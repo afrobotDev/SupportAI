@@ -18,3 +18,5 @@ export function isCritical(request: SupportRequest) {
     return false;
   }
 }
+
+console.log(RequestSeverity.Low);
