@@ -61,6 +61,21 @@ export const assert = {
       );
     }
   },
+
+  throws(fn: () => void, expected: string): void {
+    try {
+      fn();
+    } catch (error) {
+      if (error instanceof Error) {
+        if (error.message !== expected) {
+          throw new Error(`Expected "${expected}", got "${error.message}"`);
+        }
+        return;
+      }
+      throw new Error(`Expected "${expected}", got unknown error`);
+    }
+    throw new Error(`Expected throw, but no error was thrown`);
+  },
 };
 
 export const withSubmit: boolean = true;
