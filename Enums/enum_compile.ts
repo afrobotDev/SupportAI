@@ -7,9 +7,8 @@ export enum InternalErrors {
   SelfAwarenessAchieved = 9999,
 }
 
-// don't touch above this line
-
 export function getErrorLabel(error_code: InternalErrors): string {
-  const error_code_value: number = error_code.InvalidPrompt;
-  return `${error_code_value}: ${error_code[error_code_value]}`;
+  return InternalErrors[error_code]
+    ? `${error_code}: ${InternalErrors[error_code]}`
+    : `${error_code}: Unknown error`;
 }
