@@ -4,7 +4,7 @@ type NegativeSentiment = "dissatisfied" | "angry";
 export type Sentiment = PositiveSentiment | NegativeSentiment;
 export type Response = { message: string; notify: boolean };
 
-export function respondToSentiment(sentiment: Sentiment): Response {
+export function respondToSentiment(sentiment: string): Response {
   if (sentiment === "happy" || sentiment === "satisfied") {
     return handlePositiveSentiment(sentiment);
   } else if (sentiment === "dissatisfied" || sentiment === "angry") {
