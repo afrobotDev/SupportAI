@@ -6,10 +6,7 @@ export type UserFeedback = {
 export function handleFeedback(feedback: UserFeedback) {
   if (feedback.rating === undefined || !isValidRating(feedback.rating)) {
     return "Give a rating between 1 and 5.";
-  } else if (
-    feedback.email === undefined ||
-    !feedback.email.includes("@")
-  ) {
+  } else if (feedback.email === undefined || !feedback.email.includes("@")) {
     return "Provide a valid email address.";
   }
   return `Thanks, ${getEmailUsername(feedback.email)}! Rating: ${ratingToString(feedback.rating)}`;
